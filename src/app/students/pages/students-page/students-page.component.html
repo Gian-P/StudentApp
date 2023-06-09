@@ -1,0 +1,29 @@
+
+
+<div class="container">
+  <div class="first-header">
+    <div class="symbol">
+      <img src="../../../../assets/app-icon.png" alt="app-icon">
+    </div>
+    <span class="span grow" routerLink="/students/califications-page">Calificaciones</span>
+    <span class="span grow" routerLink="/students/grades-page">Asistencia</span>
+  </div>
+
+  <div class="second-header">
+    <span class="label">Estudiantes Registrados</span>
+    <span class="grow">
+      <button class="add_student" (click)="openDialog()">
+        <div>
+          <img src="../../../../assets/add_icon.png" alt="" class="add_img">
+        </div>
+        Nuevo Estudiante
+      </button>
+    </span>
+  </div>
+
+  <mat-spinner class="{{ isLoading ? '' : 'show' }}" > </mat-spinner>
+
+  <shared-table [students]="students" *ngIf="!isLoading"></shared-table>
+
+</div>
+

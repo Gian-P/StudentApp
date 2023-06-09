@@ -1,0 +1,78 @@
+shared-table{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.first-header{
+  display: flex;
+  height: 10vh;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  width: 60%;
+}
+
+.second-header{
+  display: flex;
+  height: 8vh;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  width: 70%;
+}
+
+.symbol{
+  width: 100%;
+}
+
+.span{
+  color: #5DB0F5;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.label{
+  font-size: 22px;
+  font-weight: 300;
+  padding-top: 15px;
+}
+
+.add_student{
+  display: flex;
+  background-color: #2196F3;
+  border: none;
+  color: white;
+  padding: 15px;
+  font-size: 22px;
+  font-family: Roboto, sans-serif;
+  gap: 5px;
+  font-weight: 300;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add_img{
+   filter: invert(100%);
+}
+
+.grow {
+  display: inline-block;
+  transition-duration: .3s;
+  transition-property: transform;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.show{
+  display: none;
+}
