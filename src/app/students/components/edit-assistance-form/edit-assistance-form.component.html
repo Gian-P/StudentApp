@@ -1,0 +1,58 @@
+<form [formGroup]="assistance_edit_form" autocomplete="off" class="grades_form" (ngSubmit)="onSubmit()">
+  <h1 mat-dialog-title class="title">Modificar asistencia</h1>
+  <div mat-dialog-content>
+
+    <div class="form_styles">
+      <mat-form-field>
+        <mat-label>Asistencia español</mat-label>
+        <mat-select formControlName="Spanish_Assistance">
+          <mat-option  *ngFor="let estatus of assistanceEstatus" [value]="estatus">
+            {{estatus}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form_styles">
+      <mat-form-field>
+        <mat-label>Asistencia Matematica</mat-label>
+        <mat-select formControlName="Mathematics_Assistance">
+          <mat-option *ngFor="let estatus of assistanceEstatus" [value]="estatus">
+            {{estatus}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form_styles">
+      <mat-form-field>
+        <mat-label>Asistencia Sociales</mat-label>
+        <mat-select formControlName="History_Assistance">
+          <mat-option  *ngFor="let estatus of assistanceEstatus" [value]="estatus">
+            {{estatus}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form_styles">
+      <mat-form-field>
+        <mat-label>Asistencia Naturales</mat-label>
+        <mat-select formControlName="Biology_Assistance">
+          <mat-option  *ngFor="let estatus of assistanceEstatus" [value]="estatus">
+            {{estatus}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div mat-dialog-actions class="opciones">
+    <button mat-button type="button" (click)="closeDialog()">Cancelar</button>
+    <button mat-button animal cdkFocusInitial type="submit">Modificar</button>
+  </div>
+
+</form>
+
+

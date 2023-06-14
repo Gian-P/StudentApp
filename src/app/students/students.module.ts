@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StudentsRoutingModule } from './students-routing.module';
 import { CalificationsPageComponent } from './pages/califications-page/califications-page.component';
-import { GradesPageComponent } from './pages/grades-page/grades-page.component';
 import { StudentsPageComponent } from './pages/students-page/students-page.component';
-import { TableComponent } from './components/table/table.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -16,15 +14,29 @@ import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ModifyComponent } from './components/modify/modify.component';
+import { StudentsTableComponent } from './components/students-table/students-table.component';
+import { GradesTableComponent } from './components/grades-table/grades-table.component';
+import { GradesFormComponent } from './components/grades-form/grades-form.component';
+import { AssistanceTableComponent } from './components/assistance-table/assistance-table.component';
+import { AssistancePageComponent } from './pages/assistance-page/assistance-page.component';
+import { AssistanceFormComponent } from './components/assistance-form/assistance-form.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { EditAssistanceFormComponent } from './components/edit-assistance-form/edit-assistance-form.component';
 
 @NgModule({
   declarations: [
     CalificationsPageComponent,
-    GradesPageComponent,
     StudentsPageComponent,
-    TableComponent,
     RegisterComponent,
-    ModifyComponent
+    ModifyComponent,
+    StudentsTableComponent,
+    GradesTableComponent,
+    GradesFormComponent,
+    AssistanceTableComponent,
+    AssistancePageComponent,
+    AssistanceFormComponent,
+    EditAssistanceFormComponent,
   ],
   imports: [
     CommonModule,
@@ -37,7 +49,9 @@ import { ModifyComponent } from './components/modify/modify.component';
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class StudentsModule { }

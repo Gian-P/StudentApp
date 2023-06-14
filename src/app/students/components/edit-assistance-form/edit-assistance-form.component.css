@@ -1,0 +1,11 @@
+mat-form-field{
+  width: 240px !important;
+}
+
+.title{
+  text-align: center;
+}
+
+.opciones{
+  justify-content: space-between;
+}

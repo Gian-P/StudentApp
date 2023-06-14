@@ -1,0 +1,42 @@
+<form [formGroup]="grades_form" autocomplete="off" class="grades_form" (ngSubmit)="onSubmit()">
+  <h1 mat-dialog-title class="title">Calificación</h1>
+  <div mat-dialog-content>
+
+    <div class="form_styles">
+      <mat-form-field>
+        <mat-label>Primer examen</mat-label>
+        <input matInput formControlName="First_Exam">
+      </mat-form-field>
+    </div>
+
+    <div class="form_styles">
+      <mat-form-field>
+        <mat-label>Segundo examen</mat-label>
+        <input matInput formControlName="Second_Exam">
+      </mat-form-field>
+    </div>
+
+    <div class="form_styles">
+      <mat-form-field>
+        <mat-label>Examen final</mat-label>
+        <input matInput formControlName="Final_Exam">
+      </mat-form-field>
+    </div>
+
+    <div class="form_styles">
+      <mat-form-field>
+        <mat-label>Participación</mat-label>
+        <input matInput formControlName="Participation">
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div mat-dialog-actions class="opciones">
+    <button mat-button type="button" (click)="closeDialog()">Cancelar</button>
+    <button mat-button animal cdkFocusInitial type="submit">Agregar</button>
+  </div>
+
+</form>
+
+

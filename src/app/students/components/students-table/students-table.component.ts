@@ -2,16 +2,16 @@ import { Component, Input } from '@angular/core';
 import { Student } from '../../interfaces/student.interface'
 import { StudentsService } from '../../services/students.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ModifyComponent } from '../../components/modify/modify.component';
+import { ModifyComponent } from '../modify/modify.component';
 import Swal from 'sweetalert2';
-
 @Component({
-  selector: 'shared-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css']
+  selector: 'shared-students-table',
+  templateUrl: './students-table.component.html',
+  styleUrls: ['./students-table.component.css']
 })
-export class TableComponent {
-  @Input() students: Student[] = [] ;
+export class StudentsTableComponent {
+
+  @Input() students: Student[] = [];
 
   constructor(
     private studentService: StudentsService,
@@ -52,4 +52,5 @@ export class TableComponent {
       }
     });
   }
+
 }

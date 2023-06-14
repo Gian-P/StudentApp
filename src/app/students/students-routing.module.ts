@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalificationsPageComponent } from './pages/califications-page/califications-page.component';
-import { GradesPageComponent } from './pages/grades-page/grades-page.component';
 import { StudentsPageComponent } from './pages/students-page/students-page.component';
+import { AssistancePageComponent } from './pages/assistance-page/assistance-page.component';
 
 const routes: Routes = [
   {
@@ -10,8 +10,8 @@ const routes: Routes = [
     component: CalificationsPageComponent,
   },
   {
-    path: 'grades-page',
-    component: GradesPageComponent,
+    path: 'assistance-page',
+    component: AssistancePageComponent,
   },
   {
     path: 'students-page',

@@ -1,1 +1,16 @@
-<p>califications-page works!</p>
+<div class="container">
+  <div class="first-header">
+    <div class="symbol">
+      <img src="../../../../assets/app-icon.png" alt="app-icon">
+    </div>
+    <span class="span grow" routerLink="/students/students-page">Estudiantes</span>
+    <span class="span grow" routerLink="/students/assistance-page">Asistencia</span>
+  </div>
+
+  <div class="second-header">
+    <span class="label">Calificaciones de los estudiantes</span>
+  </div>
+
+  <shared-grades-table [students]="students"></shared-grades-table>
+
+</div>

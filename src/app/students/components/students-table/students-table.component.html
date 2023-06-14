@@ -1,47 +1,46 @@
 <table mat-table [dataSource]="students" class="mat-elevation-z8 table">
 
-  <!--- Note that these columns can be defined in any order.
+  <!--- Note that these columns can be defined in any order.s
         The actual rendered columns are set as a property on the row definition" -->
 
-  <!-- id Column -->
   <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> id </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element; let i = index;"> {{element.id}} </td>
   </ng-container>
 
-  <!-- Nombre Column -->
+
   <ng-container matColumnDef="nombre">
     <th mat-header-cell *matHeaderCellDef> Nombre </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <td mat-cell *matCellDef="let element; let i = index;"> {{element.name}} </td>
   </ng-container>
 
-  <!-- primer apellido Column -->
+
   <ng-container matColumnDef="primer_apellido">
     <th mat-header-cell *matHeaderCellDef> Primer apellido </th>
-    <td mat-cell *matCellDef="let element"> {{element.first_Name}} </td>
+    <td mat-cell *matCellDef="let element; let i = index;"> {{element.first_Name}} </td>
   </ng-container>
 
-  <!-- telefono Column -->
+
   <ng-container matColumnDef="telefono">
     <th mat-header-cell *matHeaderCellDef> Telefono </th>
-    <td mat-cell *matCellDef="let element"> {{element.telephone_Number}} </td>
+    <td mat-cell *matCellDef="let element; let i = index;"> {{element.telephone_Number}} </td>
   </ng-container>
 
-  <!-- Email Column -->
+
   <ng-container matColumnDef="email">
     <th mat-header-cell *matHeaderCellDef> Email </th>
-    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    <td mat-cell *matCellDef="let element; let i = index;"> {{element.email}} </td>
   </ng-container>
 
-  <!-- Genero Column -->
+
   <ng-container matColumnDef="genero">
     <th mat-header-cell *matHeaderCellDef> Genero </th>
-    <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+    <td mat-cell *matCellDef="let element; let i = index;"> {{element.gender}} </td>
   </ng-container>
 
-  <!-- Genero Column -->
+
   <ng-container matColumnDef="opciones">
-    <th mat-header-cell *matHeaderCellDef> opciones </th>
+    <th mat-header-cell *matHeaderCellDef> Opciones </th>
     <td mat-cell *matCellDef="let element">
       <div class="icons">
         <mat-icon class="grow" data-id="{{element.id}}" (click)="deleteStudent($event)">delete</mat-icon>
@@ -54,7 +53,6 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-
 
 
 

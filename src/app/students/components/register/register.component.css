@@ -6,3 +6,11 @@
 .select{
   width: 100%;
 }
+
+.register{
+  text-align: center;
+}
+
+.buttons{
+  justify-content: space-between;
+}

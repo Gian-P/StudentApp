@@ -3,7 +3,7 @@ import { StudentsService } from '../../services/students.service';
 import { Student } from '../../interfaces/student.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { RegisterComponent } from '../../components/register/register.component';
-import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-students-page',
   templateUrl: './students-page.component.html',
@@ -21,7 +21,7 @@ export class StudentsPageComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.studentService.getAllStudents()
+    this.studentService.GetAllStudents()
       .subscribe((students) => {
         this.students = students;
         this.isLoading = false;
@@ -36,6 +36,4 @@ export class StudentsPageComponent implements OnInit {
       this.students = resp;
     });
   }
-
-
 }

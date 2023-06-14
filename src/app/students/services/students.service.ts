@@ -1,8 +1,10 @@
 import { environments } from './../../../environments/environments';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, debounce, debounceTime, tap } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 import { Student } from '../interfaces/student.interface';
+import { Grade } from '../interfaces/grade.interface';
+import { Assistance } from '../interfaces/assistance.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,11 @@ export class StudentsService {
 
   constructor(private http: HttpClient) { }
 
-  getAllStudents():Observable<Student[]> {
+  GetStudentById(id: number):Observable<Student> {
+    return this.http.get<Student>(`${ this.baseUrl }/api/Student/${id}`);
+    }
+
+  GetAllStudents():Observable<Student[]> {
     return this.http.get<Student[]>(`${ this.baseUrl }/api/Student`);
     }
 
@@ -27,6 +33,39 @@ export class StudentsService {
 
   DeleteStudent(id:number){
     return this.http.delete<Student[]>(`${ this.baseUrl }/api/Student/${id}`);
+  }
+
+  AddGrade(grade: Grade){
+    return this.http.post<Grade[]>(`${ this.baseUrl }/api/Grade/`, grade);
+  }
+
+  GetAllGrades(){
+    return this.http.get<Grade[]>(`${ this.baseUrl }/api/Grade/`);
+  }
+
+  GetStudentGrade(id:number){
+    return this.http.get<Grade>(`${ this.baseUrl }/api/Grade/${id}`);
+  }
+
+  ModifyGrade(id:number, grade: Grade){
+    return this.http.put<Grade[]>(`${ this.baseUrl }/api/Grade/${id}`,grade);
+  }
+
+  GetAllAssistances(){
+    return this.http.get<Assistance[]>(`${ this.baseUrl }/api/Assistance/`);
+  }
+
+  AddAssistance(assistance: Assistance){
+    return this.http.post<Assistance[]>(`${ this.baseUrl }/api/Assistance/`, assistance)
+      .pipe(
+        catchError((err) => {
+          return of('error')
+        })
+      )
+  }
+
+  ModifyAssistance(id:number, assistance: any){
+    return this.http.put<Assistance[]>(`${ this.baseUrl }/api/Assistance/${id}`, assistance)
   }
 
 }

@@ -1,0 +1,53 @@
+<table mat-table [dataSource]="studentsGrades"class="mat-elevation-z8 table">
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element; let i = index;"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Estudiante">
+    <th mat-header-cell *matHeaderCellDef> Estudiante </th>
+    <td mat-cell *matCellDef="let element; let i = index;"> {{element.studentName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Español">
+    <th mat-header-cell *matHeaderCellDef> Español </th>
+    <td mat-cell *matCellDef="let element; let i = index;"><span class="subject" (click)="openDialog('Spanish_Grade', i)">{{calculateLiteral(element.Spanish_Grade)}}</span> </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="Sociales">
+    <th mat-header-cell *matHeaderCellDef> Sociales </th>
+    <td mat-cell *matCellDef="let element; let i = index;"><span class="subject" (click)="openDialog('History_Grade', i)">{{calculateLiteral(element.History_Grade)}}
+    </span> </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="Matemáticas">
+    <th mat-header-cell *matHeaderCellDef> Matemáticas </th>
+    <td mat-cell *matCellDef="let element; let i = index;"> <span class="subject" (click)="openDialog('Math_Grade', i)">{{calculateLiteral(element.Math_Grade)}}</span>  </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Naturales">
+    <th mat-header-cell *matHeaderCellDef> Naturales </th>
+    <td mat-cell *matCellDef="let element; let i = index;"> <span class="subject" (click)="openDialog('Biology_Grade', i)">{{calculateLiteral(element.Biology_Grade)}}</span> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Opciones">
+    <th mat-header-cell *matHeaderCellDef> Opciones </th>
+    <td mat-cell *matCellDef="let element; let i = index;">
+      <div class="icons">
+        <mat-icon class="{{studentsGrades[i].id === 0 ? 'subject' : ''}}" (click)="addGrade(i)">add</mat-icon>
+        <mat-icon class="{{studentsGrades[i].id !== 0 ? 'subject' : ''}}" (click)="modifyGrade(i)">edit</mat-icon>
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Promedio">
+    <th mat-header-cell *matHeaderCellDef> Promedio </th>
+    <td mat-cell *matCellDef="let element; let i = index;"> {{calculateLiteral(calculateAverage(i))}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

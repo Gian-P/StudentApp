@@ -6,3 +6,16 @@
 .select{
   width: 100%;
 }
+
+.modify_form{
+  display: flex;
+  flex-direction: column;
+}
+
+.title{
+  align-self: center;
+}
+
+.options{
+justify-content: space-between;
+}

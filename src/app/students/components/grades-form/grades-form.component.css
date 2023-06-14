@@ -1,0 +1,12 @@
+.grades_form{
+  display: flex;
+  flex-direction: column;
+}
+
+.title{
+  align-self: center;
+}
+
+.opciones{
+  justify-content: space-between;
+}

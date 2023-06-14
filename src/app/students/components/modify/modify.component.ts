@@ -5,7 +5,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 @Component({
-  selector: 'app-modify',
+  selector: 'shared-modify',
   templateUrl: './modify.component.html',
   styleUrls: ['./modify.component.css']
 })

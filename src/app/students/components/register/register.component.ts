@@ -5,7 +5,7 @@ import { StudentsService } from '../../services/students.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-register',
+  selector: 'shared-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
